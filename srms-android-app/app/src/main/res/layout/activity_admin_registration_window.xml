@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_50">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar.SRMS"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Registration Window"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout style="@style/CardStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set / Update Window" android:textStyle="bold" android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSession" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Session (e.g. 2025/2026)"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Semester" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/gray_700"/>
+                <Spinner android:id="@+id/spinnerSemester" android:layout_width="match_parent" android:layout_height="46dp"/>
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Level" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/gray_700"/>
+                <Spinner android:id="@+id/spinnerLevel" android:layout_width="match_parent" android:layout_height="46dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickOpen"
+                    style="@style/Button.Outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Pick Opens-On Date &amp; Time" />
+                <TextView android:id="@+id/tvOpenChosen" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/gray_700" android:layout_marginTop="4dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickClose"
+                    style="@style/Button.Outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Pick Closes-On Date &amp; Time" />
+                <TextView android:id="@+id/tvCloseChosen" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/gray_700" android:layout_marginTop="4dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    style="@style/Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Save Window" />
+
+                <ProgressBar android:id="@+id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_marginTop="8dp" android:visibility="gone"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Existing Windows" android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerWindows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
