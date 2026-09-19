@@ -11,4 +11,4 @@ jobs:
       - run: gradle wrapper --gradle-version 8.6
       - run: ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
-        with: { name: app-debug, path: app/build/outputs/apk/debug/*.apk }
+        with: { name: app-debug, path: app/build/outputs/apk/debug/srms.apk }
